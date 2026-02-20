@@ -71,61 +71,11 @@ JSON
 Crea el archivo: sudo nano /var/www/html/index.html y pega este código profesional:
 
 HTML
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>AI Cloud Panel</title>
-    <style>
-        body { font-family: 'Inter', sans-serif; background: #0f172a; color: white; display: flex; justify-content: center; padding: 20px; }
-        #chat-window { width: 100%; max-width: 900px; height: 90vh; background: #1e293b; border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; }
-        #output { flex: 1; overflow-y: auto; padding: 20px; }
-        .msg { margin-bottom: 15px; padding: 12px; border-radius: 8px; line-height: 1.5; }
-        .user { background: #334155; margin-left: 20%; border-left: 4px solid #38bdf8; }
-        .bot { background: #1e293b; border: 1px solid #334155; margin-right: 20%; }
-        .input-area { background: #0f172a; padding: 20px; display: flex; gap: 10px; }
-        input[type="text"] { flex: 1; background: #1e293b; border: 1px solid #334155; color: white; padding: 12px; border-radius: 6px; }
-        button { background: #38bdf8; color: #0f172a; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    </style>
-</head>
-<body>
-    <div id="chat-window">
-        <div id="output"></div>
-        <div class="input-area">
-            <input type="file" id="file-up" style="display:none" onchange="upFile()">
-            <button onclick="document.getElementById('file-up').click()" style="background:#475569; color:white">📎</button>
-            <input type="text" id="user-in" placeholder="Escribe aquí...">
-            <button onclick="send()">Enviar</button>
-        </div>
-    </div>
-    <script>
-        async function send() {
-            const i = document.getElementById('user-in');
-            const o = document.getElementById('output');
-            if(!i.value) return;
-            o.innerHTML += `<div class="msg user"><b>Tú:</b><br>${i.value}</div>`;
-            const msg = i.value; i.value = '';
-            const res = await fetch('/api/chat', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ message: msg })
-            });
-            const d = await res.json();
-            o.innerHTML += `<div class="msg bot"><b>IA:</b><br>${d.reply}</div>`;
-            o.scrollTop = o.scrollHeight;
-        }
-        async function upFile() {
-            const f = document.getElementById('file-up').files[0];
-            const fd = new FormData(); fd.append('file', f);
-            document.getElementById('output').innerHTML += `<div class="msg bot">⚙️ Procesando documento...</div>`;
-            await fetch('/api/upload', { method: 'POST', body: fd });
-            document.getElementById('output').innerHTML += `<div class="msg bot">✅ Documento listo.</div>`;
-        }
-    </script>
-</body>
-</html>
+((VER ARCHIVO))
+
 6. DOMINIO, SSL Y REINICIO FINAL
 Configura el dominio: sudo nano /etc/nginx/sites-available/bot (Cámbialo por tu dominio real).
+
 
 Nginx
 server {
