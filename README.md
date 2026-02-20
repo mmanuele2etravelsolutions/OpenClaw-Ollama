@@ -67,15 +67,14 @@ JSON
   "system_prompt": "Eres un asistente experto. Utiliza los documentos PDF cargados para responder con precisión.",
   "temperature": 0.7
 }
+
 5. INTERFAZ WEB (FRONTEND)
 Crea el archivo: sudo nano /var/www/html/index.html y pega este código profesional:
-
 HTML
 ((VER ARCHIVO))
 
 6. DOMINIO, SSL Y REINICIO FINAL
 Configura el dominio: sudo nano /etc/nginx/sites-available/bot (Cámbialo por tu dominio real).
-
 
 Nginx
 server {
@@ -90,7 +89,6 @@ server {
         proxy_set_header Host $host;
     }
 }
-
 
 Activar todo:
 
