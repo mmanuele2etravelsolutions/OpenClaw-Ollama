@@ -1,0 +1,21 @@
+# --- Archivos Sensibles y Configuración ---
+.openclaw/config.json
+.env
+*.pem
+*.key
+
+# --- Datos y Modelos (Muy pesados) ---
+.openclaw/knowledge/
+.openclaw/storage/
+.ollama/
+
+# --- Logs y Temporales ---
+*.log
+npm-debug.log*
+.DS_Store
+dist/
+node_modules/
+
+# --- Backups ---
+backups_ia/
+*.tar.gz
