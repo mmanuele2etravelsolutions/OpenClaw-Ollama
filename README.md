@@ -10,7 +10,9 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential curl git wget software-properties-common
 
 # Instalar Node.js 20 (LTS)
+
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt update
 sudo apt install -y nodejs
 
 # Instalar Nginx y Certbot para el dominio y SSL
