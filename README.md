@@ -49,8 +49,11 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 mkdir -p ~/.openclaw/knowledge
 
 # Configuración inicial (Sigue los pasos en pantalla)
+
 openclaw onboard --install-daemon
+
 Configuración del archivo config.json
+
 Edita: nano ~/.openclaw/config.json. Copia y pega esto (reemplaza tu-usuario):
 
 JSON
@@ -71,11 +74,14 @@ JSON
 }
 
 5. INTERFAZ WEB (FRONTEND)
+6. 
 Crea el archivo: sudo nano /var/www/html/index.html y pega este código profesional:
+
 HTML
 ((VER ARCHIVO))
 
-6. DOMINIO, SSL Y REINICIO FINAL
+7. DOMINIO, SSL Y REINICIO FINAL
+
 Configura el dominio: sudo nano /etc/nginx/sites-available/bot (Cámbialo por tu dominio real).
 
 Nginx
